@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .sign {
+        border : 1px white;  
+        
+        }
+    body{
+        background-color: lightgray;
+    }
+
+    input {
+        font-style: opacity '0.5';
+    }
+    
+
+</style>
+<script>
+    function renew() {
+        userId.value = "";
+        password.value = "";
+        conf.value ="";
+        nickname.value = "";
+        userage.value = "";
+    }
+
+    function validcate() {
+    
+    if(!(/^.{8,12}&/.test(userId.value) && /[a-z][0-9]/.test(userId.value)))
+    {
+        alert("아이디를 확인해주세요!");
+        return flase;
+    }
+
+    if(!(/[\*\!\$]/.test(password.vlaue) && /[a-zA-Z]/.test(val) && /\d/.test(val))) {
+            alert("비밀번호를 확인해주세요");
+            return false;
+    }
+    
+    if(!(/^.{2}/.test(nickname.test))) {
+        alert("닉네임을 확인해주세요");
+        return false;
+    }
+    
+    function member(id,password,nickname,age) {
+        this.id = id;
+        this.password = password;
+        this.nickname = nickname;
+        this.age = age;
+    }
+
+    let members = [];
+    members.push(new member(userId.value,password.value,nickname.value,age.value));
+    
+    return ture;
+}
+
+
+</script>
+<script>
+    function signfunc() {
+        childWindow = open("sign.html","myPopup","width=500, height=300, top=300, left=200");
+    }
+
+</script>
+<body>
+    <div>
+    <form action="" class="sign" onsubmit="return validcate();">
+        <label for="userId">아이디: </label>
+        <input type="text" placeholder="4~12자 영문 숫자포함" id="userId">
+        <br>
+        <br>
+        <label for="password">비밀번호: </label>
+        <input type="text" placeholder="8~12자, 특수,영문,숫자 포함" id="password">
+        <br>
+        <br>
+        <label for="conf">비밀번호 확인: </label>
+        <input type="text" placeholder="비밀번호 확인" id="conf">
+        <br>
+        <br>
+        <label for="nickname">닉네임: </label>
+        <input type="text" placeholder="2자 이상" id = nickname>
+        <br>
+        <br>
+        <label for="userage">나이: </label>
+        <input type="text" placeholder="만나이" id="userage">
+        <br>
+        <br>
+        <input type="submit" value="회원가입">
+        <input type="button" value="초기화" onclick="renew();">
+        
+    </form>
+</div>
+</body>
+</html>

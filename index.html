@@ -3,9 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>홈페이지 프로젝트</title>
+    <title>강우혁</title>
+    <style>
+        img {
+            width: 300px;
+            height: 600px;
+            align-content: center;
+        }
+    </style>
+    <script>
+        function signfunc() {
+            childWindow = open("sign.html","myPopup","width=500, height=300, top=300, left=200");
+        }
+
+    </script>
 </head>
 <body>
-    <h2>변화를 줬다.</h2>
+    <header>
+        <label style="font-size: 70px;"><a href="index.html">kang's homepage</a></label>
+        <hr>
+        <nav id = "sign" onclick="signfunc();" align ="right">
+            sign in
+        </nav>
+    </header>
+
+        <div><a href="./introduce.html"><img src="./images/introduce.png" style="float:left"></a></div>
+        <div><a href="./roadmap.html"><img src="./images/roadmap.png" style="float:left"></a></div>
+        <div><a href="./wine.html"><img src="./images/wine.png"></a></div>
+
+
 </body>
 </html>
+
